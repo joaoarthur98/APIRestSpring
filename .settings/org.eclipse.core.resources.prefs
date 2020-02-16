@@ -1,5 +1,5 @@
 eclipse.preferences.version=1
-encoding//src/main/java=UFT-8
+encoding//src/main/java=UTF-8
 encoding//src/main/java/br/com/erudio/Greeting.java=UTF-8
 encoding//src/main/java/br/com/erudio/StartUp.java=UTF-8
 encoding//src/main/java/br/com/erudio/controller/GreetingController.java=UTF-8
@@ -11,8 +11,8 @@ encoding//src/main/java/br/com/erudio/exceptions/handler/CustomizeResponseEntity
 encoding//src/main/java/br/com/erudio/math/MathOperacao.java=UTF-8
 encoding//src/main/java/br/com/erudio/math/MathVerificacao.java=UTF-8
 encoding//src/main/resources=UFT-8
-encoding//src/test/java=UFT-8
+encoding//src/test/java=UTF-8
 encoding//src/test/java/br/com/erudio/math/MathOperacaoTest.java=UTF-8
 encoding//src/test/java/br/com/erudio/math/MathVerificacaoTest.java=UTF-8
 encoding//src/test/resources=UFT-8
-encoding/<project>=UFT-8
+encoding/<project>=UTF-8
