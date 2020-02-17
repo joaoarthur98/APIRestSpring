@@ -10,7 +10,6 @@ encoding//src/main/java/br/com/erudio/exceptions/OperacaoNaoSuportada.java=UTF-8
 encoding//src/main/java/br/com/erudio/exceptions/handler/CustomizeResponseEntityExceptionHandler.java=UTF-8
 encoding//src/main/java/br/com/erudio/math/MathOperacao.java=UTF-8
 encoding//src/main/java/br/com/erudio/math/MathVerificacao.java=UTF-8
-encoding//src/main/resources=UFT-8
 encoding//src/test/java=UTF-8
 encoding//src/test/java/br/com/erudio/math/MathOperacaoTest.java=UTF-8
 encoding//src/test/java/br/com/erudio/math/MathVerificacaoTest.java=UTF-8
