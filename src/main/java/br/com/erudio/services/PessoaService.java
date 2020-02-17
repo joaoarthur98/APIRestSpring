@@ -1,61 +1,49 @@
 package br.com.erudio.services;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.erudio.exceptions.NaoEncontradoException;
 import br.com.erudio.model.Pessoa;
+import br.com.erudio.repository.PessoaRepository;
 
 @Service
 public class PessoaService {
 	
-	private final AtomicLong counter = new AtomicLong();
+	@Autowired
+	PessoaRepository repository;
 	
-	public Pessoa findById(String id) {
-		Pessoa p = new Pessoa();
-	
-		p.setId(counter.incrementAndGet());
-		p.setNome("João");
-		p.setSobrenome("Arthur");
-		p.setEndereco("Rua dos pardais - RN - Brasil");
-		p.setSexo("Masculino");
-		return p;
-	}
+	public Pessoa findById(Long id) {
+		return repository.findById(id).orElseThrow(
+				() -> new NaoEncontradoException("Nenhum registro encontrado para esse id!"));
+	}	
 	
 	public List<Pessoa> findAll() {
-		List<Pessoa> pessoas = new ArrayList<Pessoa>();		
-		
-		for (int i = 0; i < 7; i++) {
-			Pessoa p = mockPessoa(i);
-			pessoas.add(p);
-		}
-	
-		return pessoas;
+		return repository.findAll();
 	}
 	
 	public Pessoa criarPessoa(Pessoa p) {
-		return p;
+		return repository.save(p);
 	}
 	
 	public Pessoa atualizarPessoa(Pessoa p) {
-		return p;
+		Pessoa entidade = repository.findById(p.getId()).orElseThrow(
+				() -> new NaoEncontradoException("Nenhum registro encontrado para esse id!"));
+		
+		entidade.setNome(p.getNome());
+		entidade.setSobrenome(p.getSobrenome());
+		entidade.setEndereco(p.getEndereco());
+		entidade.setSexo(p.getSexo());
+		return repository.save(entidade);
 	}
 	
-	public void deletarPessoa(String id) {
+	public void deletarPessoa(Long id) {
+		Pessoa entidade = repository.findById(id).orElseThrow(
+				() -> new NaoEncontradoException("Nenhum registro encontrado para esse id!"));
 		
+		repository.delete(entidade);
 	}
 	
-	public Pessoa mockPessoa(int i) {
-		Pessoa p = new Pessoa();
-		
-		p.setId(counter.incrementAndGet());
-		p.setNome("João " + i);
-		p.setSobrenome("Arthur " + i);
-		p.setEndereco("Rua dos pardais - RN - Brasil " + i);
-		p.setSexo("Masculino");
-		
-		return p;
-	}
 }

@@ -3,11 +3,14 @@ package br.com.erudio.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.erudio.model.Pessoa;
@@ -21,37 +24,30 @@ public class PessoaController {
 	private PessoaService pessoa;
 	
 	// Método que retorna uma pessoa na busca pelo ID
-	@RequestMapping(value="/{id}",
-			method = RequestMethod.GET,
-			produces = MediaType.APPLICATION_JSON_VALUE)
-	public Pessoa findById(@PathVariable("id") String id) {
+	@GetMapping(value="/{id}")
+	public Pessoa findById(@PathVariable("id") Long id) {
 		return pessoa.findById(id); 
 	}
 	
 	// Método que retorna uma lista com pessoas
-	@RequestMapping(method = RequestMethod.GET,
-				produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping
 	public List<Pessoa> findAll(){
 		return pessoa.findAll(); 
 	}
 	
-	@RequestMapping(method = RequestMethod.POST,
-			consumes = MediaType.APPLICATION_JSON_VALUE,
-			produces = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping
 	public Pessoa criarPessoa(@RequestBody Pessoa p){
 		return pessoa.criarPessoa(p);
 	}
 	
-	@RequestMapping(method = RequestMethod.PUT,
-			consumes = MediaType.APPLICATION_JSON_VALUE,
-			produces = MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping
 	public Pessoa atualizarPessoa(@RequestBody Pessoa p){
 		return pessoa.atualizarPessoa(p);
 	}
 	
-	@RequestMapping(value="/{id}",
-			method = RequestMethod.DELETE)
-	public void deletarPessoa(@PathVariable("id") String id){
+	@DeleteMapping(value="/{id}")
+	public ResponseEntity<?> deletarPessoa(@PathVariable("id") Long id){
 		 pessoa.deletarPessoa(id);
+		 return ResponseEntity.ok().build();
 	}
 }
