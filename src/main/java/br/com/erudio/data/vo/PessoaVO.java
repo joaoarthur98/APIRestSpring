@@ -1,36 +1,18 @@
-package br.com.erudio.data.model;
+package br.com.erudio.data.vo;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Entity
-@Table(name = "pessoa")
-public class Pessoa implements Serializable{
+public class PessoaVO implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 
-	public Pessoa() {}
+	public PessoaVO() {}
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	@Column(nullable = false, length = 80)
 	private String nome;
-	
-	@Column(nullable = false, length = 80)
 	private String sobrenome;
-	
-	@Column
 	private String endereco;
-	
-	@Column
 	private String sexo;
 	
 	public Long getId() {
@@ -51,18 +33,6 @@ public class Pessoa implements Serializable{
 	public void setSobrenome(String sobrenome) {
 		this.sobrenome = sobrenome;
 	}
-	public String getEndereco() {
-		return endereco;
-	}
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
-	}
-	public String getSexo() {
-		return sexo;
-	}
-	public void setSexo(String sexo) {
-		this.sexo = sexo;
-	}
 	
 	@Override
 	public int hashCode() {
@@ -75,7 +45,6 @@ public class Pessoa implements Serializable{
 		result = prime * result + ((sobrenome == null) ? 0 : sobrenome.hashCode());
 		return result;
 	}
-	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -84,7 +53,7 @@ public class Pessoa implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Pessoa other = (Pessoa) obj;
+		PessoaVO other = (PessoaVO) obj;
 		if (endereco == null) {
 			if (other.endereco != null)
 				return false;
@@ -111,6 +80,18 @@ public class Pessoa implements Serializable{
 		} else if (!sobrenome.equals(other.sobrenome))
 			return false;
 		return true;
+	}
+	public String getEndereco() {
+		return endereco;
+	}
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+	public String getSexo() {
+		return sexo;
+	}
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
 	}
 	
 }

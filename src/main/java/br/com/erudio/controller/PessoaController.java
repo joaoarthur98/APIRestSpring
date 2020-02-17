@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.erudio.model.Pessoa;
+import br.com.erudio.data.vo.PessoaVO;
 import br.com.erudio.services.PessoaService;
 
 @RestController
@@ -23,30 +23,30 @@ public class PessoaController {
 	@Autowired
 	private PessoaService pessoa;
 	
-	// Método que retorna uma pessoa na busca pelo ID
+	// Método que retorna uma PessoaVO na busca pelo ID
 	@GetMapping(value="/{id}")
-	public Pessoa findById(@PathVariable("id") Long id) {
+	public PessoaVO findById(@PathVariable("id") Long id) {
 		return pessoa.findById(id); 
 	}
 	
-	// Método que retorna uma lista com pessoas
+	// Método que retorna uma lista com PessoaVOs
 	@GetMapping
-	public List<Pessoa> findAll(){
+	public List<PessoaVO> findAll(){
 		return pessoa.findAll(); 
 	}
 	
 	@PostMapping
-	public Pessoa criarPessoa(@RequestBody Pessoa p){
+	public PessoaVO criarPessoaVO(@RequestBody PessoaVO p){
 		return pessoa.criarPessoa(p);
 	}
 	
 	@PutMapping
-	public Pessoa atualizarPessoa(@RequestBody Pessoa p){
+	public PessoaVO atualizarPessoaVO(@RequestBody PessoaVO p){
 		return pessoa.atualizarPessoa(p);
 	}
 	
 	@DeleteMapping(value="/{id}")
-	public ResponseEntity<?> deletarPessoa(@PathVariable("id") Long id){
+	public ResponseEntity<?> deletarPessoaVO(@PathVariable("id") Long id){
 		 pessoa.deletarPessoa(id);
 		 return ResponseEntity.ok().build();
 	}
