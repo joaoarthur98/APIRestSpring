@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ef70095c-a735-400d-a1f7-5c445a05831b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/erudio/converter/DozerConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/erudio/converter/DozerConverter.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1XwYiA1tvNKSJ0GeFHAHJgpmxRI" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pessoa-services" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RunManager">
+    <configuration name="StartUp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="rest-with-spring-boot" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.erudio.StartUp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ef70095c-a735-400d-a1f7-5c445a05831b" name="Default Changelist" comment="" />
+      <created>1581958748741</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581958748741</updated>
+      <workItem from="1581958754514" duration="939000" />
+      <workItem from="1581959854409" duration="192000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="293" y="108" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581959135534">
+      <screen x="70" y="90" width="1530" height="810" />
+    </state>
+    <state x="293" y="108" key="#com.intellij.execution.impl.EditConfigurationsDialog/1600.63.1440.900/70.90.1530.810@70.90.1530.810" timestamp="1581959135534" />
+    <state x="566" y="193" width="527" height="521" key="FileChooserDialogImpl" timestamp="1581960044131">
+      <screen x="70" y="90" width="1530" height="810" />
+    </state>
+    <state x="566" y="193" width="527" height="521" key="FileChooserDialogImpl/1600.63.1440.900/70.90.1530.810@70.90.1530.810" timestamp="1581960044131" />
+    <state x="399" y="103" width="861" height="700" key="NewModule_or_Project.wizard" timestamp="1581959578357">
+      <screen x="70" y="90" width="1530" height="810" />
+    </state>
+    <state x="399" y="103" width="861" height="700" key="NewModule_or_Project.wizard/1600.63.1440.900/70.90.1530.810@70.90.1530.810" timestamp="1581959578357" />
+    <state x="318" y="45" width="1024" height="817" key="SettingsEditor" timestamp="1581959901890">
+      <screen x="70" y="90" width="1530" height="810" />
+    </state>
+    <state x="318" y="45" width="1024" height="817" key="SettingsEditor/1600.63.1440.900/70.90.1530.810@70.90.1530.810" timestamp="1581959901890" />
+  </component>
+</project>
