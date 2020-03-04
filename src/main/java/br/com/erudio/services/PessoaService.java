@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.erudio.converter.DozerConverter;
+import br.com.erudio.converter.custom.PessoaConverter;
 import br.com.erudio.data.model.Pessoa;
 import br.com.erudio.data.vo.PessoaVO;
 import br.com.erudio.data.vo.v2.PessoaVOV2;
@@ -17,6 +18,9 @@ public class PessoaService {
 	
 	@Autowired
 	PessoaRepository repository;
+	
+	@Autowired
+	PessoaConverter converter;
 	
 	public PessoaVO findById(Long id) {
 		var entidade = repository.findById(id).orElseThrow(
@@ -36,8 +40,8 @@ public class PessoaService {
 	}
 	
 	public PessoaVOV2 criarPessoaV2(PessoaVOV2 p) {
-		var entidade = DozerConverter.parseObject(p, Pessoa.class);
-		var vo = DozerConverter.parseObject(repository.save(entidade), PessoaVOV2.class);
+		var entidade = converter.converterVOParaEntidade(p);
+		var vo = converter.converterEntidadeParaVO(repository.save(entidade));
 		return vo;
 	}
 	

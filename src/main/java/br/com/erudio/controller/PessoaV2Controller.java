@@ -13,14 +13,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.erudio.converter.custom.PessoaConverter;
 import br.com.erudio.data.vo.PessoaVO;
 import br.com.erudio.data.vo.v2.PessoaVOV2;
 import br.com.erudio.services.PessoaService;
 
 @RestController
-@RequestMapping("/pessoa/v1")
-public class PessoaController {
+@RequestMapping("/pessoa/v2")
+public class PessoaV2Controller {
 	
 	@Autowired
 	private PessoaService pessoa;
@@ -38,11 +37,6 @@ public class PessoaController {
 	}
 	
 	@PostMapping
-	public PessoaVO criarPessoaVO(@RequestBody PessoaVO p){
-		return pessoa.criarPessoa(p);
-	}
-	
-	@PostMapping("/v2")
 	public PessoaVOV2 criarV2(@RequestBody PessoaVOV2 p){
 		return pessoa.criarPessoaV2(p);
 	}
